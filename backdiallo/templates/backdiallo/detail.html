@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+ 
+<section>
+  <div class="col-12 py-5"></div>
+<!--div detail d'un produit-->
+<div class="row text-center">
+    <div class="col-md-2"></div>
+    <div class="col-md-4 "> 
+        <img src="{{ products.thumbnail.url }}" class="card-img-top mt-5"  alt="..."> 
+      </div>
+    <div class="col-md-1">
+    </div>  
+    <div class="col-md-4 mt-5">
+        <div>
+            <h1> {{ products.name }}</h1>
+            <h1 class="prix" style="color: rgb(108, 111, 7);">  {{ products.price }} FCFA</h1> 
+        </div>
+         <div style="margin: 10%;" class="card px-3 " style="width: 23rem;">
+            <div  class="card-body ">
+              <h1 class="card-title ">Information</h1>
+              <h4 class="card-text"> {{ products.description }} </h4>
+             </div>
+          </div>
+          <h1>Disponible en Stock : {{ products.stock }}</h1>
+          {% if user.is_authenticated  %}
+          <a href="{% url 'add_cart' products.slug %}" class="btn btn-warning btn-lg text-center">Ajouter au Panier </a>
+          
+          {% endif %}
+      </div>
+      <div class="col-md-1"></div>
+</div>
+
+</section>
+
+
+{% endblock %}

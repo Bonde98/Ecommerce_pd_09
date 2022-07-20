@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+
+<div class="col-12 py-5 "></div>
+   <section class="as">
+    {% for order in orders %}
+    <div class="row container-fluid g-1 py-3">
+      <div class="col-md-3  py-2">
+        <img src="{{ order.product.thumbnail.url }}" class="img-fluid " width="100%" alt="...">
+      </div>
+      <div class="col-md-5 mt-6">
+        <div class="card-body">
+          <h5 class="card-title">{{ order.product.name }}</h5>
+          <h3 class="card-text" style="color: rgb(93, 140, 6);"> {{ order.product.price }} </h3>
+          <p class="card-title text-center"> {{ order.quantity }} Restant dans le stock</p>
+
+        </div>
+      </div>
+      <div class="col-md-1 text-center py-3 ">
+        <div class="d-flex flex-column pt-5 text-center">
+            <a href="{% url 'delete_order' order.product.slug %}" class="btn btn-danger bg-danger mt-3">Supprimer</a> 
+            <a href="{% url 'logine' %}" class="btn btn-success  mt-3 "> j'achète </a>
+         </div>
+      </div>
+    </div>
+     {% endfor %}
+     <div class="row contaainer">
+       <div class="col-md-4"></div>
+      <div class="col-md-4" >
+      <a href="{% url 'payment' %}"  style="background-color: rgb(93, 140, 6);" class="btn btn-success  btn-lg">Valider votre commande</a>
+      <a href="{% url 'delete_cart' %}" class="btn btn-danger bg-danger btn-lg ">Supprimer le Panier</a> 
+     </div>
+       <div class="col-md-4"></div>
+     </div>
+    
+    
+  </section>
+
+ 
+{% endblock %}

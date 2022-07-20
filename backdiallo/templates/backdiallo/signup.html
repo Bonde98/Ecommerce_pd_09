@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenu %}
+
+
+<h1 class="text-center">Inscription...</h1>  
+<form action="" method="post" class="text-center col-md-8 m-auto py-5 container-fluid">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button type="submit " class="btn btn-save btn-primary btn">S'inscrire</button>
+   <div class="text-center">
+    J'ai déja un compte ? <a style="text-decoration: none; color:rgb(93, 140, 6)" href="{% url 'logine' %}"> Connecter </a> 
+   </div>
+</form> 
+
+{% endblock %}

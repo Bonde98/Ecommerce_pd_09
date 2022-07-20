@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+
+ <!--form se connecter-->
+ <form  method="post" class=" d-grid gap-2 col-5 mx-auto row g-3 mt-5 container-fluid py-3 text-center">
+      {% csrf_token %}
+      <div class="col-md-12">
+          <h3 class="">se connecter</h3>
+         
+      </div>     
+      <div class="col ">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="Email" class="form-control py-4 " name="email" id="inputEmail">
+      </div>   
+
+    <div class="col-md-12 text-center">
+      <label for="inputPassword4" class="form-label">Mot de Passe</label>
+      <input type="password" class="form-control py-4" name="password" id="inputPassword4">
+    </div>
+    <div class="col-md-12 text-center text-dark">
+      <button  class="btn submit ">connecter</button> 
+    </div>
+    T'as pas de compte ? <a style="text-decoration: none; color:rgb(93, 140, 6)" href="{% url 'signup' %}"> Créer un compte </a> 
+ </form>
+{% endblock %}
+
+

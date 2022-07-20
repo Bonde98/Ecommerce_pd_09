@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+ <h1 class="text-center">Valider Votre Payement </h1>
+  <!--Form inscription-->
+  <form method="post" class="row text-center g-4 mt-5 container-fluid py-3" >
+    {% csrf_token %}
+    {{ inscrit.as_p }}
+    <div class="row">
+      <div class="col-md-6 ">
+          <label for="inputNom4" class="form-label">Nom d utilisateur: </label>
+          <input type="nom" class="form-control py-4 " id="inputNom4">
+        </div>
+      <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email: </label>
+          <input type="email" class="form-control py-4" name="email">
+        </div>
+      <div class="col-md-6">
+          <label for="number" class="form-label">Numéro Téléphone: </label>
+          <input class="form-control  py-4" type="text"  name="number">
+        </div> 
+        
+    </div>
+    <div class="col-md-12 text-center">
+        <button class="btn btn-save  bg-success">valider </button> 
+      </div>
+      <h6>vos données à caractère personnel seront utilisés pour traiter votre commmande,pour faciliter votre expérience sur ce site Web et à d'autres fins écrites dans notre </h6>
+  </form>
+{% endblock contenu %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+
+        <h1 class="text-center py-5 ">Votre commande sur DialloShop...</h1>
+      <!--Form inscription-->
+      <form method="post" class=" text-center container-fluid py-3" >
+        {% csrf_token %}
+  
+        {% for valider in valide %}
+         <h6> Bonjour M. {{ valider.email }}, Nous avons reçu votre commande <br>
+          nous t'appellerons pour la livraison au {{ valider.number }}</h6>
+
+         <p>Du {{ valider.date_de_commande }}</p>
+        {% endfor %}
+       
+      <div class="col-md-12 text-center">
+        
+        <a href="/" class="btn bg-success">continuer d'acheter... </a>
+      </div>
+     
+      </form>
+    
+       <!--avant dernier div-->
+    <div class="avantd row mt-5  ">
+      <div class="col-md-3 container-fluid">
+        <h3>Livraison  <i class="fa-solid fa-truck"></i></h3>
+        <p class="p">livraison en mois de 24h partout à Dakar </p>
+      </div>
+      <div class="col-md-3 container-fluid">
+        <h3>Moyen de Paiement</h3>
+        <p class="p">Orange money, Wave,Wester union, Carte bancaire, Ria</p>
+      </div>
+      <div class="col-md-3 container-fluid">
+        <h3>A Propos</h3>
+        <p class="p">Amazon en France : une contribution positive à l’économie
+          Depuis plus de 20 ans, nous servons avec passion nos clients en France. Toutefois, si nous penson</p>
+      </div>
+      
+    </div>
+    <div class="d-flex flex-column bg-secondary">
+        <div class="text-center"> <h6>Suivez-nous sur les reseaux sociaux</h6></div>
+        <div class="d-flex justify-content-center "> 
+          <div class="row py-5">
+            <div class="col-3"> <i class="fa-brands fa-twitter-square"></i></div>
+            <div class="col-3"><i class="fa-brands fa-facebook-square"></i></div>
+            <div class="col-3"><i class="fa-brands fa-instagram"></i></div>
+            <div class="col-3"><i class="fa-brands fa-youtube"></i></div>
+          </div> 
+        </div>
+        <div class="">Tous les droits sont réservés.</div>
+        <div>
+          <h4 class="text-uppercase text-center">&copy;ASSEBADIANE2022</h4>
+        </div>
+      </div>
+{% endblock %}
+
+            
+     
+      
+    
+    
+
+   
+    
